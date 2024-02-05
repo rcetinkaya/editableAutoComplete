@@ -91,14 +91,18 @@ function App() {
                 )}
               />
             </Grid>
-            <Grid item xs={6}  sx={{ backgroundColor: 'grey.900', color: 'grey.300', padding: 2, borderRadius: 1 }}>
-            {selectedOptions.map((option:any, index:number) => (
-                <Box key={option.id} display="flex" alignItems="center" marginBottom={2}>
-                  <Avatar src={option.image} sx={{ marginRight: 2 }} />
-                  <Typography>{option.location.name}</Typography>
-                </Box>
-              ))}
-            </Grid>
+            {
+              selectedOptions.length > 0 &&
+              <Grid item xs={6}  sx={{ backgroundColor: 'grey.900', color: 'grey.300', padding: 2, borderRadius: 1 }}>
+              {selectedOptions.map((option:any, index:number) => (
+                  <Box key={option.id} display="flex" alignItems="center" marginBottom={2}>
+                    <Avatar src={option.image} sx={{ marginRight: 2 }} />
+                    <Typography>{option.location.name}</Typography>
+                  </Box>
+                ))}
+              </Grid>
+            }
+           
 
           </Grid>
 
